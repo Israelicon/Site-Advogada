@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Advogada Trabalhista</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 20px;
+            background-color: #f8f9fa;
+        }
+        header {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        .container {
+            max-width: 600px;
+            margin: auto;
+            padding: 20px;
+            background-color: white;
+            border-radius: 5px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        }
+        form {
+            display: flex;
+            flex-direction: column;
+        }
+        input {
+            margin-bottom: 15px;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+        button {
+            padding: 10px;
+            background-color: #007bff;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #0056b3;
+        }
+        .login-link {
+            text-align: center;
+            margin-top: 15px;
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <h1>Bem-vindo ao Escritório de Advocacia Trabalhista</h1>
+</header>
+
+<div class="container">
+    <h2>Cadastro</h2>
+    <form id="cadastroForm">
+        <input type="text" placeholder="Nome" required>
+        <input type="text" placeholder="CPF" required>
+        <input type="tel" placeholder="Telefone" required>
+        <input type="email" placeholder="E-mail" required>
+        <input type="password" placeholder="Senha" required>
+        <input type="password" placeholder="Confirmar Senha" required>
+        <button type="submit">Cadastrar</button>
+    </form>
+    <div class="login-link">
+        <p>Já tem uma conta? <a href="#login">Faça login aqui</a></p>
+    </div>
+</div>
+
+<div class="container" id="login" style="display:none;">
+    <h2>Login</h2>
+    <form id="loginForm">
+        <input type="text" placeholder="Nome" required>
+        <input type="email" placeholder="E-mail" required>
+        <input type="password" placeholder="Senha" required>
+        <button type="submit">Entrar</button>
+    </form>
+</div>
+
+<script>
+    // Script para alternar entre cadastro e login
+    const loginLink = document.querySelector('.login-link a');
+    const loginContainer = document.getElementById('login');
+    
+    loginLink.addEventListener('click', function(event) {
+        event.preventDefault();
+        document.querySelector('.container:first-of-type').style.display = 'none';
+        loginContainer.style.display = 'block';
+    });
+</script>
+
+</body>
+</html>
